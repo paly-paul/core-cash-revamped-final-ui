@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #F4F6FA;
+  --sur: #FFF;
+  --elv: #F8F9FC;
+  --hov: #EEF1F7;
+
+  --blue: #0057D9;
+  --blue-lt: #EBF2FF;
+  --blue-bd: rgba(0, 87, 217, 0.2);
+
+  --green: #059669;
+  --green-lt: #ECFDF5;
+  --green-bd: rgba(5, 150, 105, 0.2);
+
+  --amber: #D97706;
+  --amber-lt: #FFFBEB;
+  --amber-bd: rgba(217, 119, 6, 0.22);
+
+  --red: #DC2626;
+  --red-lt: #FEF2F2;
+  --red-bd: rgba(220, 38, 38, 0.2);
+
+  --info: #0369A1;
+  --info-lt: #F0F9FF;
+  --info-bd: rgba(3, 105, 161, 0.2);
+
+  --t1: #0F1728;
+  --t2: #4B5675;
+  --tm: #9AA3B5;
+
+  --b0: #E8ECF4;
+  --b1: #D1D9EC;
+
+  --ui: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+
+  --rsm: 5px;
+  --rmd: 9px;
+  --rlg: 14px;
+
+  --shc: 0 1px 3px rgba(15, 23, 40, 0.07), 0 0 0 1px var(--b0);
+  --she: 0 4px 16px rgba(15, 23, 40, 0.1), 0 0 0 1px var(--b0);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--t1);
+  font-family: var(--ui);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--b1); border-radius: 3px; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.35); }
+  50% { opacity: 0.75; box-shadow: 0 0 0 5px transparent; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes tin {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse-amber {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.35); }
+  50% { opacity: 0.75; box-shadow: 0 0 0 5px transparent; }
+}
+
+.spinning { animation: spin 0.7s linear infinite; display: inline-block; }
+.pulse-dot { animation: pulse 2.4s ease-in-out infinite; }
+.toast-anim { animation: tin 0.2s ease; }
